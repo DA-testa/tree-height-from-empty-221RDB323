@@ -36,7 +36,7 @@ def main():
         path = "test/" + fileInput
         fileRead = open(path, mode="r")
         n=int(fileRead.readline().strip())
-        parents=numpy.array(map(int, fileRead.readline().strip().split()))
+        parents=list(map(int, fileRead.readline().strip().split()))
 
     if "I" in letterInput:
         n=int(input())
