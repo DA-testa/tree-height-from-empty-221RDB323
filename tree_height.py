@@ -1,5 +1,7 @@
 # python3
 
+# Danila Sinicins 221RDB323
+
 import sys
 import threading
 import numpy
@@ -8,36 +10,36 @@ import numpy
 def compute_height(n, parents):
     koks=numpy.zeros(n)
 
-    def height(int):
-        if koks[int]!=0:
-            return koks[int]
-        if parents[int]==-1:
-            koks[int]=1
+    def height(i):
+        if koks[i]!=0:
+            return koks[i]
+        if parents[i]==-1:
+            koks[i]=1
         else:
-            koks[int]=height(parents[int])+1
-        return koks[int]
+            koks[i]=height(parents[i])+1
+        return koks[i]
 
-    for e in range(n):
-        height(e)
+    for i in range(n):
+        height(i)
 
     max_height=int(max(koks))
     return max_height
 
 
 def main():
-    # implement input form keyboard and from files
+    # implement input from keyboard and from files
     letterInput=input("F/I: ")
     if "F" in letterInput:
         fInput=input("file: ")
-        if "a" in letterInput:
+        if ".a" in letterInput:
             return
-        with open(f"./test/{fInput}", mode="r") as file:
-            n=int(file.readline().strip())
-            vals=list(map(int, file.readline().strip().split()))
+        with open(f"./test/{fInput}", mode="r") as f:   
+            n=int(f.readline().strip())
+            parents=list(map(int, f.readline().strip().split()))
     if "I" in letterInput:
         n=int(input())
-        vals=list(map(int, input().split()))
-    print(compute_height(n, vals))
+        parents=list(map(int, input().split()))
+    print(compute_height(n, parents))
 
 # In Python, the default limit on recursion depth is rather low,
 # so raise it here for this problem. Note that to take advantage
