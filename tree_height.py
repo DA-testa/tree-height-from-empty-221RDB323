@@ -32,8 +32,8 @@ def main():
     # implement input from keyboard and from files
     letterInput=input("F/I: ")
     if "F" in letterInput:
-        path = "test/" + fileInput
         fileInput=input()
+        path = "test/" + fileInput
         if "a" in fileInput:
             return
         try:
