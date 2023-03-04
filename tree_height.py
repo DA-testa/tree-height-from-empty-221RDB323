@@ -31,7 +31,7 @@ def main():
     letterInput=input("F/I: ")
     if "F" in letterInput:
         fileInput=input()
-        if "a" in letterInput:
+        if "a" in fileInput:
             return
         path = "test/" + fileInput
         fileRead = open(path, mode="r")
