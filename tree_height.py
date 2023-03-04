@@ -36,13 +36,19 @@ def main():
         if "a" in fileInput:
             return
         path = "test/" + fileInput
-        fileRead = open(path, mode="r")
-        n=int(fileRead.readline().strip())
-        parents=list(map(int, fileRead.readline().strip().split()))
-
-    if "I" in letterInput:
+        try:
+            fileRead = open(path, mode="r")
+            n=int(fileRead.readline().strip())
+            parents=list(map(int, fileRead.readline().strip().split()))
+        except FileNotFoundError:
+            print("file error")
+            return 
+    elif "I" in letterInput:
         n=int(input())
         parents=list(map(int, input().split()))
+    else:
+        print("wrong input")
+        return
 
     print(compute_height(n, parents))
 
