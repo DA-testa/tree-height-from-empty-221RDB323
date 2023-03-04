@@ -32,10 +32,10 @@ def main():
     # implement input from keyboard and from files
     letterInput=input("F/I: ")
     if "F" in letterInput:
+        path = "test/" + fileInput
         fileInput=input()
         if "a" in fileInput:
             return
-        path = "test/" + fileInput
         try:
             fileRead = open(path, mode="r")
             n=int(fileRead.readline().strip())
@@ -58,5 +58,4 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-main()
 # print(numpy.array([1,2,3]))
