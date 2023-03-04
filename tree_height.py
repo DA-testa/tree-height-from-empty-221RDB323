@@ -30,12 +30,14 @@ def main():
     # implement input from keyboard and from files
     letterInput=input("F/I: ")
     if "F" in letterInput:
-        fInput=input("file: ")
-        if ".a" in letterInput:
+        fileInput=input()
+        if "a" in letterInput:
             return
-        with open(f"./test/{fInput}", mode="r") as f:   
-            n=int(f.readline().strip())
-            parents=list(map(int, f.readline().strip().split()))
+        path = "test/" + fileInput
+        fileRead = open(path, mode="r")
+        n=int(fileRead.readline().strip())
+        parents=list(map(int, fileRead.readline().strip().split()))
+
     if "I" in letterInput:
         n=int(input())
         parents=list(map(int, input().split()))
